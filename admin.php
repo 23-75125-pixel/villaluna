@@ -1106,6 +1106,12 @@ document.addEventListener('DOMContentLoaded', () => {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/sweetalert.js"></script>
+<script>
+window.RENDER_SUPABASE_CONFIG = {
+  url: <?= json_encode(getenv('SUPABASE_URL') ?: '') ?>,
+  anonKey: <?= json_encode(getenv('SUPABASE_ANON_KEY') ?: '') ?>
+};
+</script>
 <script src="js/supabase.js"></script>
 <script src="js/db.js"></script>
 <script src="js/auth.js"></script>

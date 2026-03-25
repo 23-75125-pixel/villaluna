@@ -9,6 +9,13 @@ window.SUPABASE_CONFIG = {
   anonKey: 'sb_publishable_KIYrblmijTHGl4j7vkL7Iw_2RFTT-rO'
 };
 
+if (window.RENDER_SUPABASE_CONFIG) {
+  window.SUPABASE_CONFIG = {
+    ...window.SUPABASE_CONFIG,
+    ...window.RENDER_SUPABASE_CONFIG
+  };
+}
+
 
 window.isSupabaseConfigured = function isSupabaseConfigured() {
   const cfg = window.SUPABASE_CONFIG || {};

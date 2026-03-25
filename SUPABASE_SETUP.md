@@ -113,3 +113,26 @@ The app now signs in through Supabase Auth and expects usernames to map to auth 
 - `cashier1` -> `cashier1@swiftpos.local`
 
 If you create users manually in Supabase Auth, use the same pattern so the username login screen works correctly.
+
+## Render deployment
+
+This project now includes:
+
+- [Dockerfile](c:\xampp\htdocs\drive-download-20260325T103121Z-3-001\Dockerfile)
+- [.dockerignore](c:\xampp\htdocs\drive-download-20260325T103121Z-3-001\.dockerignore)
+
+Use a Render `Web Service` with `Docker`.
+
+Set these environment variables in Render:
+
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+
+Example:
+
+```text
+SUPABASE_URL=https://your-project-ref.supabase.co
+SUPABASE_ANON_KEY=your-publishable-key
+```
+
+You do not need to set a Build Command or Start Command when using the Dockerfile.
