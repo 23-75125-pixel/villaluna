@@ -9,7 +9,11 @@ window.SUPABASE_CONFIG = {
   anonKey: 'sb_publishable_KIYrblmijTHGl4j7vkL7Iw_2RFTT-rO'
 };
 
-if (window.RENDER_SUPABASE_CONFIG) {
+if (
+  window.RENDER_SUPABASE_CONFIG &&
+  window.RENDER_SUPABASE_CONFIG.url &&
+  window.RENDER_SUPABASE_CONFIG.anonKey
+) {
   window.SUPABASE_CONFIG = {
     ...window.SUPABASE_CONFIG,
     ...window.RENDER_SUPABASE_CONFIG
@@ -24,8 +28,8 @@ window.isSupabaseConfigured = function isSupabaseConfigured() {
     cfg.anonKey &&
     cfg.url.startsWith('https://') &&
     cfg.url.includes('.supabase.co') &&
-    !cfg.url.includes('YOUR_PROJECT_ID') &&
-    !cfg.anonKey.includes('YOUR_SUPABASE_ANON_KEY')
+    !cfg.url.includes('lictthhdaqddxodzyzpq') &&
+    !cfg.anonKey.includes('sb_publishable_KIYrblmijTHGl4j7vkL7Iw_2RFTT-rO')
   );
 };
 
